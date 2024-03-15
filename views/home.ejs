@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/pwa/site.webmanifest">
+    <link rel="stylesheet" href="/Bootstrap_5.3.3/bootstrap.min.css">
+    <title>Home - YelpCamp</title>
+</head>
+<body>
+  <div class="container pt-5 text-center">
+    <h1 class="h1">Welcome, to YelpCamp!</h1>
+    <div class="mt-4">
+  <a class="btn btn-lg btn-outline-primary " href="/campgrounds">Explore Campgrounds!</a>
+</div>
+
+</div>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/pwa/sw.js")
+        .then((swReg) => {})
+        .catch((err) => {
+          console.error("Service Worker Error", err);
+        });
+    });
+  }
+</script>
+  <script src="/Bootstrap_5.3.3/bootstrap.bundle.min.js"></script>
+</body>
+</html>

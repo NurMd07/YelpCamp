@@ -1,0 +1,60 @@
+<% layout('../layouts/boilerplate') %>
+    <form method="POST" action="/campgrounds/<%=camp._id%>?_method=PUT"  class="needs-validation" novalidate>
+<div class="row justify-content-center mx-md-5 mb-5">
+<div class="col-lg-6 border border-radius-2 px-4">
+    <h3 class="text-center my-3 ">Edit CampGround</h3>
+    <div class="mb-3">
+        <lable for="name" class="form-lable" >Name</lable>
+    <input type="text" class="form-control" value="<%=camp.name%>" id="name" name="campground[name]" required>
+    <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="mb-3">
+        <lable for="location" class="form-lable" >Location</lable>
+    <input type="text" class="form-control"  value="<%=camp.location%>" id="location" name="campground[location]" required>
+    <div class="invalid-feedback">
+        Please provide a valid Location.
+      </div>
+</div>
+    <div class="mb-3">
+        <lable for="image" class="form-lable" >Image URL</lable>
+    <input type="text" class="form-control"  value="<%=camp.image%>" id="image" name="campground[image]" required>
+    <div class="invalid-feedback">
+        Please enter a valid image url.
+        </div>
+</div>
+    <div>
+        <lable for="price" class="form-lable">Price/<span style="font-size:0.8em">night</span></lable>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="price">$</span>
+        <input type="Number" class="form-control"  value="<%=camp.price%>" aria-label="price" name="campground[price]" aria-describedby="price" required>
+        <div class="invalid-feedback">
+            Please provide a valid Price/<small>night.</small>
+          </div>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+    </div>
+    </div>
+    <div class="mb-3">
+        <lable for="description" class="form-lable" >Description</lable>
+    <textarea class="form-control"  id="description" name="campground[description]" required><%=camp.description%></textarea>
+    <div class="invalid-feedback">
+        Please provide a description about this campground.
+       </div>
+       <div class="valid-feedback">
+         Looks good!
+       </div>
+</div>
+    <div class="mb-3 row">
+        <div class="col-6 ">
+      <button class="btn btn-warning ">Submit</button></div>
+      <div class="col-6 d-flex justify-content-end align-items-end">
+      <a href="/campgrounds/<%=camp._id%>" class="btn btn-info btn-sm text-white">Go Back</a>
+      </div>
+    </div>
+</div>
+
+</div>
+</form>
